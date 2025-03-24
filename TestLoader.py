@@ -6,7 +6,7 @@ from DataLoader import *
 class LoadDataTestCase(unittest.TestCase):
 
     def test_0_getDataFromDir(self):
-        data = getDataFromDir("UnitTestData/Data/Class1/", "Class1")
+        data = getDataFromDir("UnitTestData/DataByClass/Class1/", "Class1")
         self.assertEqual(len(data), 2)
         for labeledImage in data:
             self.assertEqual(labeledImage[0], "Class1")
@@ -36,7 +36,7 @@ class LoadDataTestCase(unittest.TestCase):
 
     def test_6_getSplitData(self):
         # Hard to test on a small dataset because of percentages
-        data = getSplitData("UnitTestData/Data/")
+        data = getSplitData("UnitTestData/DataByClass/")
         self.assertEqual(len(data), 3)
         self.assertEqual(len(data[0]), 5)
         self.assertEqual(len(data[1]), 1)
